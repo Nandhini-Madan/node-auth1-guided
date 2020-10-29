@@ -46,7 +46,7 @@ router.post("/login", async (req, res, next) => {
 			})
 		}
 		//will be true or false depending on whether the password matched the hash
-		const passwordValid = await bcrypt.compare(password, user.password)
+		const passwordValid = await bycrypt.compare(password, user.password)
 		if (!passwordValid) {
 			return res.status(401).json({
 				message: "Invalid credentials",
